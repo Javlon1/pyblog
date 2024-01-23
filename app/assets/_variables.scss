@@ -1,0 +1,53 @@
+$black: #0D1212;
+$light-black: #181D1C;
+$white: #fff;
+$silver: #E2F1EF;
+$green: #D3EFEA;
+$blue: #3571A3;
+$orange: #ff4500;
+$gary: #00000080;
+
+$transition: .3s all ease;
+$shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+$radius: 10px;
+$padding: 20px;
+
+
+$fs-title: 24px;
+$fs-desc: 16px;
+
+
+@mixin title {
+    font-size: $fs-title;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 21px;
+    }
+}
+
+@mixin tags {
+    font-size: 16px;
+    padding: 4px 8px;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 14px;
+    }
+}
+
+@mixin description {
+    font-size: $fs-desc;
+    font-weight: 500;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 14px;
+    }
+}
+
+@mixin padding {
+    padding: $padding;
+
+    @media only screen and (max-width: 600px) {
+        padding: 16px;
+    }
+}

@@ -1,0 +1,108 @@
+@import '../../../assets/variables';
+
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 1999;
+    background-color: $silver;
+
+    &__nav {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__link {
+            display: flex;
+            gap: 5px;
+
+            &__img {
+                object-fit: contain;
+            }
+
+            span {
+                background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 20%);
+                background-clip: text;
+                color: transparent;
+                animation: shine 15s infinite ease-in-out;
+                font-weight: 700;
+                font-size: 17px;
+            }
+        }
+
+        &__searchBox {
+            width: 280px;
+            height: 51px;
+            display: flex;
+            position: relative;
+            border-radius: $radius;
+            background-color: #fff;
+            justify-content: space-between;
+            transition: $transition;
+            overflow: hidden;
+            box-shadow: $shadow;
+
+            &__searchInput {
+                width: calc(100% - 51px);
+                height: 100%;
+                position: absolute;
+                right: 51px;
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    outline: none;
+                    @include description;
+                    font-weight: 600;
+                    @include padding;
+
+                    &::placeholder {
+                        color: $black;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            &__search {
+                position: absolute;
+                right: 0;
+                min-width: 51px;
+                height: 51px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .header {
+        &__nav {
+            &__searchBox {
+                width: 51px;
+            }
+        }
+    }
+}
+
+.active {
+    width: 280px;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0;
+    }
+
+    60% {
+        background-position: 180px;
+    }
+
+    100% {
+        background-position: 0px;
+    }
+}
