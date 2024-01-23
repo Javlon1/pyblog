@@ -13,7 +13,7 @@ const Index = () => {
                 <meta name="keywords" content="" /> // ключевые слова, страницы
                 <meta name="image_src" content="" /> // URL для img
 
-                <meta property="og:title" content="Home" /> // Название страницы
+                <meta property="og:title" content="pyblog.uz - Python hamda dasturlashga oid o'zbek tilidagi blog." /> // Название страницы
                 <meta property="og:description" content="" /> // Описание страницы
                 <meta property="og:image" content="" /> // URL для img: https://example.com/image.jpg
                 <meta property="og:url" content="" /> // оснавное URL: https://example.com/page-url
@@ -21,7 +21,7 @@ const Index = () => {
                 <meta property="og:site_name" content="" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
-                <title>Home</title>
+                <title>pyblog.uz - Python hamda dasturlashga oid o'zbek tilidagi blog.</title>
             </Head>
 
             <main>
