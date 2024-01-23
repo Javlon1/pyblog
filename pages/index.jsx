@@ -25,7 +25,7 @@ const Index = () => {
                 <meta property="og:site_name" content="pyblog.uz" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
-                <title>pyblog.uz - Python hamda dasturlashga oid o'zbek tilidagi blog.</title>
+                <title>pyblog.uz - Python va dasturlashga oid o'zbek tilidagi blog</title>
             </Head>
 
             <main>
