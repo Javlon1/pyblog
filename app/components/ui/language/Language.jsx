@@ -1,10 +1,10 @@
-import * as React from 'react'
 import styles from './Language.module.scss'
 import { Context } from '../Context/Context';
+import { useContext, useEffect } from 'react';
 
 const Language = () => {
     const [Lang] = React.useState([{ id: 1, lang: 'ru' }, { id: 2, lang: 'en' }])
-    const { lan, setLan } = React.useContext(Context)
+    const { lan, setLan } = useContext(Context)
 
     const handleChange = (event) => {
 
@@ -12,7 +12,7 @@ const Language = () => {
 
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
 
         window.localStorage.setItem('lan', lan)
 

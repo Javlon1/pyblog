@@ -43,7 +43,7 @@ const Footer = () => {
                         </Link>
                         <Link
                             target='_blank'
-                            href={'https://www.instagram.com/pyblog.uz/'}
+                            href={'https://www.instagram.com/pyblog.uz'}
                         >
                             <i className="bi bi-instagram"></i>
                             Instagram
@@ -58,7 +58,7 @@ const Footer = () => {
                     </li>
                 </ul>
                 <div className={styles.footer__bottom}>
-                    <p>pyblog.uz by <Link href={'https://www.instagram.com/rashidov_21/'}>Abdurakhmon Rashidov </Link>created with <b>❤️</b> akalar.</p>
+                    <p>pyblog.uz by <Link href={'https://www.instagram.com/rashidov_21'}>Abdurakhmon Rashidov </Link>created with <b>❤️</b> akalar.</p>
                 </div>
             </MyContainer>
         </footer>

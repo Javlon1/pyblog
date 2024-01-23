@@ -31,7 +31,7 @@ const Index = () => {
             </Head>
 
             <main>
-                <Intro />
+                <Intro /> 
             </main>
         </>
     )

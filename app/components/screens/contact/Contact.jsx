@@ -21,7 +21,7 @@ const Contact = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href={'https://www.instagram.com/pyblog.uz/'}>
+                            <Link href={'https://www.instagram.com/pyblog.uz'}>
                                 <i className="bi bi-instagram"></i>
                             </Link>
                         </li>

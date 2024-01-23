@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Bar.module.scss'
@@ -13,7 +12,7 @@ const Bar = () => {
                 <div className={styles.bar__list__item}>
                     <h2 className={styles.bar__list__item__title}>Kun hazili</h2>
                     <Link
-                        href={'https://www.instagram.com/p/Cr_RNAMNIMb/'}
+                        href={'https://www.instagram.com/p/Cr_RNAMNIMb'}
                         target='_blank'
                     >
                         <Image
