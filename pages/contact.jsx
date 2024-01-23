@@ -7,18 +7,22 @@ const ContactPage = () => {
     return (
         <>
             <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
-                <meta name="description" content="" /> // Описание страницы
-                <meta name="keywords" content="" /> // ключевые слова, страницы
-                <meta name="image_src" content="" /> // URL для img
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="description" content="pyblog bu Python va dasturlashga oid o’zbek tilidagi blog. Hozirda Python, Javascript, Dasturlash, Veb dasturlash, Foundation va boshqa turkumlarga va o’nlab teglarga mansub maqolalar saytdan joy olgan." /> // Описание страницы
+                <meta name="keywords" content="Dasturlash, Blog, Python, Payton, dasturchi, Javascript, maqola, yangilik, dastur." /> // ключевые слова, страницы
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="yandex-verification" content="6f5f50298c460b67" />
+                <meta name="google-site-verification" content="YvmMznWrKMTkzmtTOYx8mb8k-2EmNaywBAimqFDg4Ds" />
+                <meta name="image_src" content="https://pyblog.uz/pybloguz/static/assets/images/HEAD.svg" /> // URL для img
+                <meta name="author" content="Abdurakhmon Rashidov" />
 
-                <meta property="og:title" content="Bog'lanish - pyblog.uz" /> // Название страницы
-                <meta property="og:description" content="" /> // Описание страницы
-                <meta property="og:image" content="" /> // URL для img: https://example.com/image.jpg
-                <meta property="og:url" content="" /> // оснавное URL: https://example.com/page-url
+                <meta property="og:title" content="Python va dasturlash haqida o'zbek tilidagi blog." /> // Название страницы
+                <meta property="og:description" content="pyblog.uz bu python va dasturlashga oid o'zbek tilidagi sifatli maqola, tutoriallar berib boruvchi blog hisoblanadi." /> // Описание страницы
+                <meta property="og:image" content="https://pyblog.uz/pybloguz/static/assets/images/HEAD.svg" /> // URL для img: https://example.com/image.jpg
+                <meta property="og:url" content="https://pyblog.uz/" /> // оснавное URL: https://example.com/page-url
                 <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="" /> // Название сайта
+                <meta property="og:site_name" content="pyblog.uz" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
                 <title>Bog'lanish - pyblog.uz</title>

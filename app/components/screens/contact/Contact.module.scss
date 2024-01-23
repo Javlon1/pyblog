@@ -16,6 +16,11 @@
         flex-direction: column;
         gap: 20px;
 
+        h1 {
+            font-size: 1px;
+            color: $white;
+        }
+
         h2 {
             font-size: 24px;
             color: $black

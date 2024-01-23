@@ -8,6 +8,7 @@ const Contact = () => {
         <section className={styles.contact}>
             <MyContainer>
                 <div className={styles.contact__item}>
+                    <h1>Bog'lanish - pyblog.uz</h1>
                     <h2>Aloqa</h2>
                     <h3>Savol va takliflar masalasida bog’lanish uchun ma’lumotlarimiz</h3>
                     <p>Elektron manzilimiz: <Link href={'mailto:support@pyblog.uz'} target='_blank'>support@pyblog.uz</Link></p>

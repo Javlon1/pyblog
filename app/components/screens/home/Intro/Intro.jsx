@@ -16,6 +16,7 @@ const Intro = () => {
                     </div>
                     <div className={styles.intro__items__item}>
                         <nav className={styles.intro__items__item__nav}>
+                            <h1>pyblog.uz - Python</h1>
                             <ul className={styles.list}>
                                 <li className={styles.list__item}>
                                     <Link href={"/"} className={styles.list__item__a}>
