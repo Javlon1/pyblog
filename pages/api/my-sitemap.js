@@ -1,5 +1,4 @@
 const { SitemapStream, streamToPromise } = require("sitemap");
-
 const { Readable } = require("stream");
 
 export default async (req, res) => {
@@ -15,9 +14,9 @@ export default async (req, res) => {
         "Content-Type": "application/xml",
     });
 
-    const xmlStrina = await streamToPromise(
-        Readable.from(links).pipe(stream)
+    const xmlString = await streamToPromise(
+        Readable.from(links.map(link => ({ url: link.url, changefreq: link.changefreq, priority: link.priority }))).pipe(stream)
     ).then((data) => data.toString());
 
-    res.end(xmlStrina)
+    res.end(xmlString)
 }

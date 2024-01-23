@@ -38,7 +38,7 @@ const Bar = () => {
                             <p>+5</p>
                         </li>
                     </ul>
-                    <p>Yanada ko’proq memlar bizning <span><i className="bi bi-instagram"></i>Instagram</span> sahifamizda.</p>
+                    <p>Yanada ko’proq memlar bizning <Link target='_blank' href={'https://www.instagram.com/p/Cr_RNAMNIMb'}><i className="bi bi-instagram"></i>Instagram</Link> sahifamizda.</p>
                 </div>
 
                 <div className={styles.bar__list__column}>
