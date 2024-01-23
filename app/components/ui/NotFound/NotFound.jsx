@@ -9,7 +9,7 @@ const NotFound = () => {
         <section className={styles.notFound}>
             <div className={styles.notFound__item}>
                 <h2>'40' + '4' = '404'!</h2>
-                <h3>Sahifa topilmadi , lekin rosti rosa qidirdik...</h3>
+                <h3>Sahifa topilmadi, lekin rosti rosa qidirdik...</h3>
                 <Image
                     className={styles.notFound__item__img}
                     width={100}
