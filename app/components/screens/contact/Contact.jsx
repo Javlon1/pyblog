@@ -15,13 +15,19 @@ const Contact = () => {
                     <p>Blogni ijtimoiy tarmoqlarda ulashish:</p>
                     <ul className={styles.contact__item__list}>
                         <li>
-                            <i className="bi bi-telegram"></i>
+                            <Link href={'https://t.me/pybloguz'}>
+                                <i className="bi bi-telegram"></i>
+                            </Link>
                         </li>
                         <li>
-                            <i className="bi bi-instagram"></i>
+                            <Link href={'https://www.instagram.com/pyblog.uz/'}>
+                                <i className="bi bi-instagram"></i>
+                            </Link>
                         </li>
                         <li>
-                            <i className="bi bi-facebook"></i>
+                            <Link href={'https://www.facebook.com/pybloguz'}>
+                                <i className="bi bi-facebook"></i>
+                            </Link>
                         </li>
                     </ul>
                 </div>
