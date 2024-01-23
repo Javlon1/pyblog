@@ -271,7 +271,32 @@
                 &__nav {
                     .list {
                         &__item {
-                            padding: 2px 4px;
+                            padding: 3px 6px;
+
+                            &__btn {
+                                gap: 2px;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+
+                &__rightBar {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    .intro {
+        &__items {
+            &__item {
+                &__nav {
+                    .list {
+                        &__item {
+                            padding: 3px 4px;
 
                             &__btn {
                                 gap: 2px;
