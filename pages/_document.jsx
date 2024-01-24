@@ -7,9 +7,9 @@ class MyDocument extends Document {
                 <Head>
                     <link
                         rel="stylesheet"
-                        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+                        crossorigin="anonymous"
                     />
-                    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />

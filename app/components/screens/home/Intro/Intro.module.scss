@@ -137,6 +137,12 @@
                 transition: $transition;
 
                 .sideBar {
+                    margin-top: 2rem;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
                     &__title {
                         display: flex;
                         align-items: center;
@@ -170,8 +176,186 @@
                                 transform: rotate(-45deg);
                             }
                         }
+
+                        b {
+                            font-size: 20px;
+                        }
+                    }
+
+                    &__list {
+                        margin-top: 1rem;
+                        display: flex;
+                        gap: 10px;
+                        flex-wrap: wrap;
+
+                        li {
+                            a {
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                border: 1px solid $gary;
+                                border-radius: $radius;
+                                @include tags;
+                                transition: $transition;
+
+                                p {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    color: $gary;
+                                    transition: $transition;
+                                }
+
+                                &:hover {
+                                    border: 1px solid $black;
+
+                                    p {
+                                        color: $black;
+                                    }
+                                }
+                            }
+
+                            &:nth-child(1) {
+                                i {
+                                    color: $blue;
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                i {
+                                    color: #FFA500;
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                b {
+                                    color: #FFA500;
+                                }
+
+                                i {
+                                    color: $blue;
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                i {
+                                    color: #FFA500;
+                                }
+                            }
+                        }
                     }
                 }
+            }
+
+            .tag {
+                margin-top: 20px;
+                display: flex;
+                gap: 20px;
+
+                ul {
+                    flex-wrap: wrap;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    justify-content: space-between;
+
+                    li {
+                        a {
+                            background-color: $white;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            border: 1px solid transparent;
+                            border-radius: $radius;
+                            @include tags;
+                            transition: $transition;
+
+                            p {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: $gary;
+                                transition: $transition;
+                            }
+
+                            &:hover {
+                                border: 1px solid $black;
+
+                                p {
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+
+                    button {
+                        width: 35px;
+                        height: 35px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: $radius;
+                        border: none;
+                        color: $gary;
+                        background-color: $white;
+                        transition: $transition;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .tags {
+                transition: $transition;
+
+                ul {
+                    width: 100%;
+                    height: 0;
+                    transition: $transition;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    // background-color: $white;
+
+                    li {
+                        transition: $transition;
+
+                        a {
+                            background-color: $white;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            border: 1px solid transparent;
+                            border-radius: $radius;
+                            @include tags;
+                            transition: $transition;
+
+                            p {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: $gary;
+                                transition: $transition;
+                            }
+
+                            &:hover {
+                                border: 1px solid $black;
+
+                                p {
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pagination {
+                background-color: $green;
+                padding-top: 20px;
+                position: relative;
+                z-index: 2;
+                height: auto;
             }
         }
     }
@@ -187,6 +371,20 @@
     min-width: 100vw;
     min-height: 100vh;
     background-color: $black;
+}
+
+.tagAct {
+    transform: rotate(-180deg);
+    background-color: $blue !important;
+    color: $white !important;
+}
+
+.tagsAct {
+    margin-top: 20px;
+
+    ul {
+        height: 100px !important;
+    }
 }
 
 .opened {
@@ -258,6 +456,14 @@
                             }
                         }
                     }
+                }
+
+                .tag {
+                    display: none;
+                }
+
+                .tags {
+                    display: none;
                 }
             }
         }
