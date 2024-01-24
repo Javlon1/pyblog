@@ -30,7 +30,7 @@ const Footer = () => {
                         <Link href={'/'}>Bosh sahifa</Link>
                         <Link href={'/contact'}>Bog’lanish</Link>
                         <button>
-                            <i className="bi bi-moon-fill"></i>
+                            <i className="fa-solid fa-moon"></i>
                         </button>
                     </li>
                     <li className={styles.footer__top__item}>
@@ -38,21 +38,21 @@ const Footer = () => {
                             target='_blank'
                             href={'https://t.me/pybloguz'}
                         >
-                            <i className="bi bi-telegram"></i>
+                            <i className="fa-brands fa-telegram"></i>
                             Telegram
                         </Link>
                         <Link
                             target='_blank'
                             href={'https://www.instagram.com/pyblog.uz'}
                         >
-                            <i className="bi bi-instagram"></i>
+                            <i className="fa-brands fa-instagram"></i>
                             Instagram
                         </Link>
                         <Link
                             target='_blank'
                             href={'https://www.facebook.com/pybloguz'}
                         >
-                            <i className="bi bi-facebook"></i>
+                            <i className="fa-brands fa-facebook"></i>
                             Facebook
                         </Link>
                     </li>
