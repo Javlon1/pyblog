@@ -1,0 +1,45 @@
+@import "../../../../assets/variables";
+
+.el {
+    color: $white;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.act {
+    background-color: $black !important;
+    color: $white;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+
+    a {
+        margin: 1.5rem 0;
+        width: 45%;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 250px;
+        }
+
+        p {
+            position: absolute;
+            right: 2rem;
+            bottom: 1rem;
+            color: $black;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+    }
+}

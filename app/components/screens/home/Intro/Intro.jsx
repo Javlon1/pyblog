@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from './Intro.module.scss'
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
 import Bar from '@/app/components/layout/bar/Bar';
+import Pagination from '../Pagination/Pagination';
 
 import thumbs_up from "../../../../../public/emojies/thumbs_up.png"
 import heart from "../../../../../public/emojies/heart.png"
@@ -12,6 +13,7 @@ import fire from "../../../../../public/emojies/fire.png"
 import alien from "../../../../../public/emojies/alien.png"
 import neutral_face from "../../../../../public/emojies/neutral_face.png"
 import thumbs_down from "../../../../../public/emojies/thumbs_down.png"
+
 
 const Intro = () => {
     const [opened, setOpened] = useState(false)
@@ -322,12 +324,7 @@ const Intro = () => {
                             </ul>
                         </div>
                         <div className={styles.pagination}>
-                            <div style={{
-                                background: "#fff",
-                                height: "100px",
-                                position: "relative",
-                                zIndex: "2",
-                            }}></div>
+                            <Pagination />
                         </div>
                     </div>
                 </div>
