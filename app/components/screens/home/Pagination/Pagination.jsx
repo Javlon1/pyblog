@@ -101,10 +101,11 @@ export default function Pagination() {
                                                 width={32}
                                                 height={32}
                                                 priority
-                                                alt='reaction'
+                                                alt='👍'
                                                 src={thumbs_up}
                                             />
                                             <span>+1</span>
+                                            <div className={styles.reactionName}>Yaxshi</div>
                                         </li>
                                         <li className={styles.portfolio__items__bottom__list__item}>
                                             <Image
@@ -112,10 +113,11 @@ export default function Pagination() {
                                                 width={32}
                                                 height={32}
                                                 priority
-                                                alt='reaction'
+                                                alt='❤'
                                                 src={heart}
                                             />
                                             <span>+2</span>
+                                            <div className={styles.reactionName}>Yoqdi</div>
                                         </li>
                                         <li className={styles.portfolio__items__bottom__list__item}>
                                             <Image
@@ -123,10 +125,11 @@ export default function Pagination() {
                                                 width={32}
                                                 height={32}
                                                 priority
-                                                alt='reaction'
+                                                alt='😎'
                                                 src={sunglass_face}
                                             />
                                             <span>+3</span>
+                                            <div className={styles.reactionName}>Zo`r</div>
                                         </li>
                                         <li className={styles.portfolio__items__bottom__list__item}>
                                             <Image
@@ -134,10 +137,11 @@ export default function Pagination() {
                                                 width={32}
                                                 height={32}
                                                 priority
-                                                alt='reaction'
+                                                alt='💥'
                                                 src={fire}
                                             />
                                             <span>+4</span>
+                                            <div className={styles.reactionName}>Yonmoqda</div>
                                         </li>
                                         <li className={styles.portfolio__items__bottom__list__item}>
                                             <Image
@@ -145,10 +149,11 @@ export default function Pagination() {
                                                 width={32}
                                                 height={32}
                                                 priority
-                                                alt='reaction'
+                                                alt='👽'
                                                 src={alien}
                                             />
                                             <span>+5</span>
+                                            <div className={styles.reactionName}>Afsonaviy</div>
                                         </li>
                                         <li className={styles.portfolio__items__bottom__list__item}>
                                             <Image
@@ -156,10 +161,11 @@ export default function Pagination() {
                                                 width={32}
                                                 height={32}
                                                 priority
-                                                alt='reaction'
+                                                alt='😐'
                                                 src={neutral_face}
                                             />
                                             <span>+6</span>
+                                            <div className={styles.reactionName}>Betaraf</div>
                                         </li>
                                         <li className={styles.portfolio__items__bottom__list__item}>
                                             <Image
@@ -167,10 +173,11 @@ export default function Pagination() {
                                                 width={32}
                                                 height={32}
                                                 priority
-                                                alt='reaction'
+                                                alt='👎'
                                                 src={thumbs_down}
                                             />
                                             <span>+7</span>
+                                            <div className={styles.reactionName}>Yoqmadi</div>
                                         </li>
                                     </ul>
                                 </div>

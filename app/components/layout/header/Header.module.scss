@@ -78,6 +78,9 @@
     }
 }
 
+.active {
+    width: 270px;
+}
 
 @media only screen and (max-width: 600px) {
     .header {
@@ -87,11 +90,12 @@
             }
         }
     }
+
+    .active {
+        width: 70%;
+    }
 }
 
-.active {
-    width: 280px;
-}
 
 @keyframes shine {
     0% {

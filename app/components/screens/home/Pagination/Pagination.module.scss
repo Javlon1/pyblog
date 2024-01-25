@@ -146,9 +146,37 @@
                         right: -7px;
                     }
 
+                    .reactionName {
+                        opacity: 0;
+                        position: absolute;
+                        right: 13px;
+                        transition: $transition;
+                        font-size: 11px;
+                        border-radius: 5px;
+                        border-top-right-radius: 0px;
+                        border: 1px solid $gary;
+                        background-color: $white;
+                        padding: 1px 8px;
+
+                        &::before {
+                            content: "";
+                            width: 0px;
+                            height: 0px;
+                            position: absolute;
+                            top: -7.5px;
+                            right: -1px;
+                            border-left: 7px solid transparent;
+                            border-bottom: 7px solid $gary;
+                        }
+                    }
+
                     &:hover {
                         .portfolio__items__bottom__list__item__img {
                             transform: scale(1.1);
+                        }
+
+                        .reactionName {
+                            opacity: 1;
                         }
                     }
                 }
