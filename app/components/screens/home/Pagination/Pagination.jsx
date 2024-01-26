@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Pagination.module.scss';
+import { Context } from '@/app/components/ui/Context/Context';
 
 import thumbs_up from "../../../../../public/emojies/thumbs_up.png"
 import heart from "../../../../../public/emojies/heart.png"
@@ -10,9 +12,11 @@ import fire from "../../../../../public/emojies/fire.png"
 import alien from "../../../../../public/emojies/alien.png"
 import neutral_face from "../../../../../public/emojies/neutral_face.png"
 import thumbs_down from "../../../../../public/emojies/thumbs_down.png"
-import Link from 'next/link';
 
 export default function Pagination() {
+    const { detail, setDetail } = useContext(Context)
+
+    // Pagination
     const [projects, setProjects] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage] = useState(10);
@@ -46,9 +50,40 @@ export default function Pagination() {
     };
 
     const totalProjects = projects.length;
+    // Pagination
+
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+
+        const timeout = setTimeout(() => {
+            setShowModal(false);
+        }, 1000);
+
+        return () => clearTimeout(timeout);
+    }, [showModal]);
+
+    const handlerReactionCloce = () => {
+        setShowModal(false)
+    };
+
+    const handlerReactionAct = () => {
+        setShowModal(true)
+    };
+
+    useEffect(() => {
+
+        console.log(detail);
+
+    }, [detail])
 
     return (
         <div id="projects" className={styles.item}>
+
+            <span className={`${styles.alert} ${showModal ? styles.alertAct : ""}`}>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <i onClick={handlerReactionCloce} className="fa-solid fa-xmark"></i>
+            </span>
 
             <div className={styles.portfolio}>
                 {
@@ -67,7 +102,12 @@ export default function Pagination() {
                                                 <p>92 marta</p>
                                             </li>
                                         </ul>
-                                        <Link href={'/'}>
+                                        <Link
+                                            href={'/detail'}
+                                            onClick={() => {
+                                                setDetail([...new Set([item])]);
+                                            }}
+                                        >
                                             <h2>Pythonni o'rganish uchun 2024-yilda nima qilishim kerak ?</h2>
                                         </Link>
                                         <p>Python dasturlash tilini o'rganish uchun bir nechta usullar mavjud, va har bir kishining o'rganish usuli har-hil bo'lishi mumkin. Quyidagi qadamlar si...</p>
@@ -75,7 +115,10 @@ export default function Pagination() {
                                     <div className={styles.portfolio__items__top__right}>
                                         <Link
                                             className={styles.portfolio__items__top__right__link}
-                                            href={'/conm'}
+                                            href={'/detail'}
+                                            onClick={() => {
+                                                setDetail([...new Set([item])]);
+                                            }}
                                         >
                                             <Image
                                                 width={200}
@@ -95,7 +138,10 @@ export default function Pagination() {
                                         </div>
                                     </div>
                                     <ul className={styles.portfolio__items__bottom__list}>
-                                        <li className={styles.portfolio__items__bottom__list__item}>
+                                        <li
+                                            onClick={handlerReactionAct}
+                                            className={styles.portfolio__items__bottom__list__item}
+                                        >
                                             <Image
                                                 className={styles.portfolio__items__bottom__list__item__img}
                                                 width={32}
@@ -107,7 +153,10 @@ export default function Pagination() {
                                             <span>+1</span>
                                             <div className={styles.reactionName}>Yaxshi</div>
                                         </li>
-                                        <li className={styles.portfolio__items__bottom__list__item}>
+                                        <li
+                                            onClick={handlerReactionAct}
+                                            className={styles.portfolio__items__bottom__list__item}
+                                        >
                                             <Image
                                                 className={styles.portfolio__items__bottom__list__item__img}
                                                 width={32}
@@ -119,7 +168,10 @@ export default function Pagination() {
                                             <span>+2</span>
                                             <div className={styles.reactionName}>Yoqdi</div>
                                         </li>
-                                        <li className={styles.portfolio__items__bottom__list__item}>
+                                        <li
+                                            onClick={handlerReactionAct}
+                                            className={styles.portfolio__items__bottom__list__item}
+                                        >
                                             <Image
                                                 className={styles.portfolio__items__bottom__list__item__img}
                                                 width={32}
@@ -131,7 +183,10 @@ export default function Pagination() {
                                             <span>+3</span>
                                             <div className={styles.reactionName}>Zo`r</div>
                                         </li>
-                                        <li className={styles.portfolio__items__bottom__list__item}>
+                                        <li
+                                            onClick={handlerReactionAct}
+                                            className={styles.portfolio__items__bottom__list__item}
+                                        >
                                             <Image
                                                 className={styles.portfolio__items__bottom__list__item__img}
                                                 width={32}
@@ -143,7 +198,10 @@ export default function Pagination() {
                                             <span>+4</span>
                                             <div className={styles.reactionName}>Yonmoqda</div>
                                         </li>
-                                        <li className={styles.portfolio__items__bottom__list__item}>
+                                        <li
+                                            onClick={handlerReactionAct}
+                                            className={styles.portfolio__items__bottom__list__item}
+                                        >
                                             <Image
                                                 className={styles.portfolio__items__bottom__list__item__img}
                                                 width={32}
@@ -153,9 +211,12 @@ export default function Pagination() {
                                                 src={alien}
                                             />
                                             <span>+5</span>
-                                            <div className={styles.reactionName}>Afsonaviy</div>
+                                            <div className={styles.reactionName}>Bu dunyoniki emas!</div>
                                         </li>
-                                        <li className={styles.portfolio__items__bottom__list__item}>
+                                        <li
+                                            onClick={handlerReactionAct}
+                                            className={styles.portfolio__items__bottom__list__item}
+                                        >
                                             <Image
                                                 className={styles.portfolio__items__bottom__list__item__img}
                                                 width={32}
@@ -167,7 +228,10 @@ export default function Pagination() {
                                             <span>+6</span>
                                             <div className={styles.reactionName}>Betaraf</div>
                                         </li>
-                                        <li className={styles.portfolio__items__bottom__list__item}>
+                                        <li
+                                            onClick={handlerReactionAct}
+                                            className={styles.portfolio__items__bottom__list__item}
+                                        >
                                             <Image
                                                 className={styles.portfolio__items__bottom__list__item__img}
                                                 width={32}

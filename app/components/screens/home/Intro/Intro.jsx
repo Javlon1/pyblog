@@ -27,7 +27,7 @@ const Intro = () => {
                 }
             });
         }, 1500);
-
+ 
         return () => clearInterval(intervalId);
     }, []);
 

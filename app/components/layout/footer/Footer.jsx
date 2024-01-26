@@ -1,10 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useContext } from 'react'
 import MyContainer from '../../ui/MyContainer/MyContainer'
 import styles from './Footer.module.scss'
+import { Context } from '../../ui/Context/Context'
 
 
 const Footer = () => {
+    const { dark, setDark } = useContext(Context);
+
+    const handlerDarkMode = () => {
+        setDark(() => !dark);
+    };
+
+    console.log(dark);
+
     return (
         <footer className={styles.footer}>
             <MyContainer>
@@ -29,9 +39,11 @@ const Footer = () => {
                     <li className={styles.footer__top__item}>
                         <Link href={'/'}>Bosh sahifa</Link>
                         <Link href={'/contact'}>Bog’lanish</Link>
-                        <button>
+
+                        <button onClick={handlerDarkMode}>
                             <i className="fa-solid fa-moon"></i>
                         </button>
+
                     </li>
                     <li className={styles.footer__top__item}>
                         <Link

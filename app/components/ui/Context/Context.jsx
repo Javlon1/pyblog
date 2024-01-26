@@ -2,22 +2,23 @@ import { createContext, useEffect, useState } from 'react'
 const Context = createContext()
 
 function Provider({ children }) {
-    // const [url] = useState("https://next-14-53v1.vercel.app/api")
     const [url] = useState("http://localhost:3000/api")
 
-    const [lan, setLan] = useState(() => {
-        const storedLanguage = typeof window !== 'undefined' ? window.localStorage.getItem('lan') : null;
-        return storedLanguage ? storedLanguage : 'ru';
+    const [detail, setDetail] = useState([])
+
+    const [dark, setDark] = useState(() => {
+        const darkMode = typeof window !== 'undefined' ? window.localStorage.getItem('dark') : null;
+        return darkMode ? darkMode : false;
     });
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            window.localStorage.setItem('lan', lan);
+            window.localStorage.setItem('dark', dark);
         }
-    }, [lan]);
+    }, [dark]);
 
     return (
-        <Context.Provider value={{ lan, setLan, url }}>
+        <Context.Provider value={{ dark, setDark, url, detail, setDetail }}>
             {children}
         </Context.Provider>
     )
