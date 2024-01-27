@@ -15,6 +15,7 @@ const Detail = () => {
                 <meta name="description" content="" /> // Описание страницы
                 <meta name="keywords" content="" /> // ключевые слова, страницы
                 <meta name="image_src" content="" /> // URL для img
+                <meta name="theme-color" content="#D3EFEA" />
 
                 <meta property="og:title" content="detail" /> // Название страницы
                 <meta property="og:description" content="" /> // Описание страницы
@@ -24,7 +25,7 @@ const Detail = () => {
                 <meta property="og:site_name" content="" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
-                <title>Detail {detail[0] ? detail[0].name : ""}</title>
+                <title>Detail - {detail[0] ? detail[0].name : ""}</title>
             </Head>
 
             <main>

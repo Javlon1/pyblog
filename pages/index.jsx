@@ -16,6 +16,7 @@ const Index = () => {
                 <meta name="google-site-verification" content="YvmMznWrKMTkzmtTOYx8mb8k-2EmNaywBAimqFDg4Ds" />
                 <meta name="image_src" content="https://pyblog.uz/pybloguz/static/assets/images/HEAD.svg" /> // URL для img
                 <meta name="author" content="Abdurakhmon Rashidov" />
+                <meta name="theme-color" content="#D3EFEA" />
 
                 <meta property="og:title" content="Python va dasturlash haqida o'zbek tilidagi blog." /> // Название страницы
                 <meta property="og:description" content="pyblog.uz bu python va dasturlashga oid o'zbek tilidagi sifatli maqola, tutoriallar berib boruvchi blog hisoblanadi." /> // Описание страницы
