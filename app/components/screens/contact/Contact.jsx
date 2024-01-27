@@ -17,17 +17,17 @@ const Contact = () => {
                     <ul className={styles.contact__item__list}>
                         <li>
                             <Link href={'https://t.me/pybloguz'}>
-                                <i className="bi bi-telegram"></i>
+                                <i className="fa-brands fa-telegram"></i>
                             </Link>
                         </li>
                         <li>
                             <Link href={'https://www.instagram.com/pyblog.uz'}>
-                                <i className="bi bi-instagram"></i>
+                                <i className="fa-brands fa-instagram"></i>
                             </Link>
                         </li>
                         <li>
                             <Link href={'https://www.facebook.com/pybloguz'}>
-                                <i className="bi bi-facebook"></i>
+                                <i className="fa-brands fa-facebook"></i>
                             </Link>
                         </li>
                     </ul>
