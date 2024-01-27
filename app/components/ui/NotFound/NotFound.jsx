@@ -24,4 +24,11 @@ const NotFound = () => {
     )
 }
 
+export async function getServerSideProps({ res }) {
+    res.statusCode = 404;
+    return {
+        props: {},
+    };
+}
+
 export default NotFound;
