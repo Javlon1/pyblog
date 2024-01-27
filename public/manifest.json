@@ -14,9 +14,9 @@
             "purpose": "maskable"
         },
         {
-            "src": "https://pyblog.uz/pybloguz/static/assets/images/HEAD.svg",
+            "src": "https://pyblog.uz/pybloguz/mediafiles/posts/2024/01/all_linux_commands-min.png",
             "sizes": "512x512",
-            "type": "image/svg"
+            "type": "image/png"
         }
     ]
 }
