@@ -24,18 +24,4 @@ const NotFound = () => {
     )
 }
 
-
-export const getServerSideProps = async ({ res }) => {
-    if (res) {
-        res.writeHead(404, {
-            'Content-Type': 'text/html',
-        });
-        res.end();
-    }
-
-    return {
-        props: {},
-    };
-};
-
 export default NotFound;
