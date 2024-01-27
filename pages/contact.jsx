@@ -27,7 +27,7 @@ const ContactPage = () => {
                 <meta property="og:locale" content="ru_RU" />
 
                 <link rel="canonical" href="https://pyblog.vercel.app/" /> // изменить нужно
-                <link rel="manifest" href="/manifest.json" />
+                <link rel="manifest" href="../manifest.json" />
 
                 <title>Bog'lanish - pyblog.uz</title>
             </Head>

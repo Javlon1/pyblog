@@ -81,6 +81,7 @@ const Bar = () => {
                         className={styles.bar__list__qrcode__img}
                         width={290}
                         height={290}
+                        priority
                         alt='link'
                         src={qrcode}
                     />

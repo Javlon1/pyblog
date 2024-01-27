@@ -8,9 +8,9 @@
     "theme_color": "#0D1212",
     "icons": [
         {
-            "src": "/path/to/icon.png",
-            "sizes": "19x19",
-            "type": "image/png"
+            "src": "https://pyblog.uz/pybloguz/static/assets/images/HEAD.svg",
+            "sizes": "192x192",
+            "type": "image/svg"
         }
     ]
 }
