@@ -10,6 +10,9 @@ class MyDocument extends Document {
                         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
                         crossorigin="anonymous"
                     />
+
+                    <link rel="manifest" href="../manifest.json" />
+
                 </Head>
                 <body>
                     <Main />
