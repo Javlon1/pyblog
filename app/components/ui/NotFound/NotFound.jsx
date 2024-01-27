@@ -3,12 +3,7 @@ import Link from 'next/link'
 import styles from './NotFound.module.scss'
 import notFound from "../../../../public/404.svg"
 
-const NotFound = ({ res }) => {
-
-    if (res) {
-        res.statusCode = 404;
-        console.log(res.statusCode);
-    }
+const NotFound = () => {
 
     return (
         <section className={styles.notFound}>
@@ -29,9 +24,18 @@ const NotFound = ({ res }) => {
     )
 }
 
-export const getServerSideProps = ({ res }) => {
-    res.statusCode = 404;
-    return { props: {} };
+
+export const getServerSideProps = async ({ res }) => {
+    if (res) {
+        res.writeHead(404, {
+            'Content-Type': 'text/html',
+        });
+        res.end();
+    }
+
+    return {
+        props: {},
+    };
 };
 
 export default NotFound;
