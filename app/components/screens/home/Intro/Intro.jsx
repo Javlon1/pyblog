@@ -27,7 +27,7 @@ const Intro = () => {
                 }
             });
         }, 1500);
- 
+
         return () => clearInterval(intervalId);
     }, []);
 
@@ -72,25 +72,25 @@ const Intro = () => {
                             <h1>pyblog.uz - Python</h1>
                             <ul className={styles.list}>
                                 <li className={`${styles.list__item} ${styles.active}`}>
-                                    <button className={styles.list__item__btn}>
+                                    <button type='button' className={styles.list__item__btn}>
                                         <i className="fa-solid fa-clock"></i>
                                         Yangilar
                                     </button>
                                 </li>
                                 <li className={styles.list__item}>
-                                    <button className={styles.list__item__btn}>
+                                    <button type='button' className={styles.list__item__btn}>
                                         <i className="fa-solid fa-fire"></i>
                                         Yonmoqda
                                     </button>
                                 </li>
                                 <li className={styles.list__item}>
-                                    <button className={styles.list__item__btn}>
+                                    <button type='button' className={styles.list__item__btn}>
                                         <i className='"fas fa-thumbs-up"' id="emoji1" ref={emojiRef}></i>
                                         Emoji
                                     </button>
                                 </li>
                                 <li className={styles.list__item}>
-                                    <button className={styles.list__item__btn}>
+                                    <button type='button' className={styles.list__item__btn}>
                                         <i className="fa-solid fa-trophy"></i>
                                         TOP
                                     </button>
@@ -101,7 +101,7 @@ const Intro = () => {
                                         setOpened(!opened)
                                     }}
                                 >
-                                    <button className={styles.list__item__btn}>
+                                    <button type='button' className={styles.list__item__btn}>
                                         <span className={`${styles.list__item__btnHam} ${opened ? styles.active_Ham : ""}`}></span>
                                         Menyu
                                     </button>

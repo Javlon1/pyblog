@@ -40,7 +40,7 @@ const Footer = () => {
                         <Link href={'/'}>Bosh sahifa</Link>
                         <Link href={'/contact'}>Bog’lanish</Link>
 
-                        <button onClick={handlerDarkMode}>
+                        <button type='button' onClick={handlerDarkMode}>
                             <i className="fa-solid fa-moon"></i>
                         </button>
 
