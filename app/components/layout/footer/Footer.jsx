@@ -39,10 +39,11 @@ const Footer = () => {
                     <li className={styles.footer__top__item}>
                         <Link href={'/'}>Bosh sahifa</Link>
                         <Link href={'/contact'}>Bog’lanish</Link>
-
-                        <button type='button' onClick={handlerDarkMode}>
+                        
+                        <button type='button' onClick={handlerDarkMode} aria-label="Toggle Dark Mode">
                             <i className="fa-solid fa-moon"></i>
                         </button>
+
 
                     </li>
                     <li className={styles.footer__top__item}>
