@@ -58,7 +58,7 @@ export default function Pagination() {
 
         const timeout = setTimeout(() => {
             setShowModal(false);
-        }, 1000);
+        }, 2000);
 
         return () => clearTimeout(timeout);
     }, [showModal]);
@@ -70,12 +70,6 @@ export default function Pagination() {
     const handlerReactionAct = () => {
         setShowModal(true)
     };
-
-    useEffect(() => {
-
-        console.log(detail);
-
-    }, [detail])
 
     return (
         <div id="projects" className={styles.item}>
@@ -121,8 +115,10 @@ export default function Pagination() {
                                             }}
                                         >
                                             <Image
+                                                className={styles.img}
                                                 width={200}
                                                 height={133}
+                                                priority
                                                 alt='img'
                                                 src={"https://pyblog.uz/pybloguz/mediafiles/instagram_images/photo_2023-04-25_07-05-50_7kUHZzE.jpg"}
                                             />

@@ -1,7 +1,11 @@
-import * as React from 'react'
+import { useContext } from 'react';
 import Head from 'next/head'
+import DetailPage from '@/app/components/screens/home/Detail/Detail';
+import { Context } from '@/app/components/ui/Context/Context';
 
 const Detail = () => {
+
+    const { detail } = useContext(Context);
 
     return (
         <>
@@ -20,11 +24,11 @@ const Detail = () => {
                 <meta property="og:site_name" content="" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
-                <title>Detail</title>
+                <title>Detail {detail[0] ? detail[0].name : ""}</title>
             </Head>
 
             <main>
-                <h1>Detail</h1>
+                <DetailPage />
             </main>
         </>
     )
