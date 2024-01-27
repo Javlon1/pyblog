@@ -10,7 +10,7 @@ const Footer = () => {
     const { dark, setDark } = useContext(Context);
 
     const handlerDarkMode = () => {
-        setDark(() => !dark);
+        setDark(!dark);
     };
 
     console.log(dark);

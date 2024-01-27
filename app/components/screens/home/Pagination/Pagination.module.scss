@@ -66,9 +66,10 @@
                     }
                 }
 
-                a {
+                div {
                     color: $black;
                     transition: $transition;
+                    cursor: pointer;
 
                     h2 {
                         @include title;
@@ -81,6 +82,7 @@
 
                 p {
                     @include tags;
+                    padding: 0;
                 }
             }
 
@@ -91,6 +93,7 @@
                     overflow: hidden;
                     width: 200px;
                     height: 133px;
+                    cursor: pointer;
 
                     img {
                         width: 100%;

@@ -1,11 +1,8 @@
-import { useContext } from 'react';
 import Head from 'next/head'
 import DetailPage from '@/app/components/screens/home/Detail/Detail';
-import { Context } from '@/app/components/ui/Context/Context';
 
 const Detail = () => {
 
-    const { detail } = useContext(Context);
 
     return (
         <>
@@ -28,7 +25,7 @@ const Detail = () => {
                 <link rel="canonical" href="https://pyblog.vercel.app/" /> // изменить нужно
                 <link rel="manifest" href="../manifest.json" />
 
-                <title>Detail - {detail[0] ? detail[0].name : ""}</title>
+                <title>Detail</title>
             </Head>
 
             <main>

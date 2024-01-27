@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './DetailPage.module.scss'
-import { Context } from '@/app/components/ui/Context/Context';
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
 
 import thumbs_up from "../../../../../public/emojies/thumbs_up.png"
@@ -16,17 +15,8 @@ import thumbs_down from "../../../../../public/emojies/thumbs_down.png"
 
 
 const DetailPage = () => {
-    const { detail } = useContext(Context);
-
     const router = useRouter();
-
-    useEffect(() => {
-
-        if (!detail[0]) {
-            router.replace('/');
-        }
-
-    }, [router]);
+    const infoDetail = router.query
 
     const [showModal, setShowModal] = useState(false);
 
@@ -54,12 +44,11 @@ const DetailPage = () => {
                 <i onClick={handlerReactionCloce} className="fa-solid fa-xmark"></i>
             </span>
             <MyContainer>
-                {
-                    detail?.map((item) => (
-                        <div key={item.id} className={styles.detailPage__item}>
+               
+                        <div  className={styles.detailPage__item}>
                             <div className={styles.detailPage__item__title}>
                                 <i className="fa-solid fa-user-secret"></i>
-                                <h2>{item.name}</h2>
+                                <h2>{infoDetail.name}</h2>
                             </div>
                             <ul className={styles.detailPage__item__list}>
                                 <li>
@@ -283,8 +272,6 @@ const DetailPage = () => {
                                 </div>
                             </div>
                         </div>
-                    ))
-                }
 
                 <div className={styles.detailPage__items}>
                     <div className={styles.detailPage__items__left}>

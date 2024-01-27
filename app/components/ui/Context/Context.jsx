@@ -7,8 +7,8 @@ function Provider({ children }) {
     const [detail, setDetail] = useState([])
 
     const [dark, setDark] = useState(() => {
-        const darkMode = typeof window !== 'undefined' ? window.localStorage.getItem('dark') : null;
-        return darkMode ? darkMode : false;
+        const darkMode = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('dark')) : null;
+        return Boolean(darkMode)
     });
 
     useEffect(() => {

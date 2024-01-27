@@ -12,10 +12,11 @@ import alien from "../../../../../public/emojies/alien.png"
 import neutral_face from "../../../../../public/emojies/neutral_face.png"
 import thumbs_down from "../../../../../public/emojies/thumbs_down.png"
 import { Context } from '@/app/components/ui/Context/Context';
+import { useRouter } from 'next/router';
 
 export default function Pagination() {
     const { setDetail } = useContext(Context);
-
+    const router = useRouter()
     // Pagination
     const [projects, setProjects] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -96,22 +97,26 @@ export default function Pagination() {
                                                 <p>92 marta</p>
                                             </li>
                                         </ul>
-                                        <Link
-                                            href={'/detail'}
+                                        <div
                                             onClick={() => {
-                                                setDetail([...new Set([item])]);
+                                                router.push({
+                                                    pathname: '/detail',
+                                                    query: item
+                                                })
                                             }}
                                         >
                                             <h2>Pythonni o'rganish uchun 2024-yilda nima qilishim kerak ?</h2>
-                                        </Link>
+                                        </div>
                                         <p>Python dasturlash tilini o'rganish uchun bir nechta usullar mavjud, va har bir kishining o'rganish usuli har-hil bo'lishi mumkin. Quyidagi qadamlar si...</p>
                                     </div>
                                     <div className={styles.portfolio__items__top__right}>
-                                        <Link
+                                        <div
                                             className={styles.portfolio__items__top__right__link}
-                                            href={'/detail'}
                                             onClick={() => {
-                                                setDetail([...new Set([item])]);
+                                                router.push({
+                                                    pathname: '/detail',
+                                                    query: item
+                                                })
                                             }}
                                         >
                                             <Image
@@ -122,7 +127,7 @@ export default function Pagination() {
                                                 alt='img'
                                                 src={"https://pyblog.uz/pybloguz/mediafiles/posts/2024/01/all_linux_commands-min.png"}
                                             />
-                                        </Link>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={styles.portfolio__items__bottom}>
