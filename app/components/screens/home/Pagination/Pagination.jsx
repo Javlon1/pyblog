@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,8 +11,10 @@ import fire from "../../../../../public/emojies/fire.png"
 import alien from "../../../../../public/emojies/alien.png"
 import neutral_face from "../../../../../public/emojies/neutral_face.png"
 import thumbs_down from "../../../../../public/emojies/thumbs_down.png"
+import { Context } from '@/app/components/ui/Context/Context';
 
 export default function Pagination() {
+    const { setDetail } = useContext(Context);
 
     // Pagination
     const [projects, setProjects] = useState([]);
