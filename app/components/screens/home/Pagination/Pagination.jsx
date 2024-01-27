@@ -120,7 +120,7 @@ export default function Pagination() {
                                                 height={133}
                                                 priority
                                                 alt='img'
-                                                src={"https://pyblog.uz/pybloguz/mediafiles/instagram_images/photo_2023-04-25_07-05-50_7kUHZzE.jpg"}
+                                                src={"https://pyblog.uz/pybloguz/mediafiles/posts/2024/01/all_linux_commands-min.png"}
                                             />
                                         </Link>
                                     </div>
