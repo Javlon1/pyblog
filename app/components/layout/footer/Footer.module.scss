@@ -37,7 +37,6 @@
             }
 
             p {
-                @include tags;
                 padding: 0;
                 color: $black;
                 font-weight: 600;
@@ -77,6 +76,7 @@
 
                 a {
                     width: 120px;
+                    font-size: 18px;
 
                     i {
                         margin-right: 5px;
@@ -107,7 +107,8 @@
 
         p {
             @include tags;
-            color: $gary;
+            color: $black;
+            font-weight: 600;
 
             a {
                 color: $blue;
