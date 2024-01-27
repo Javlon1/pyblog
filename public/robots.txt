@@ -1,3 +1,4 @@
 User-agent: *
-Allow: /public/
+Allow: /
+Disallow: /private/
 Sitemap: https://chikim.vercel.app/api/my-sitemap

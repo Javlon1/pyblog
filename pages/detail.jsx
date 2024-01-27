@@ -25,6 +25,9 @@ const Detail = () => {
                 <meta property="og:site_name" content="" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
+                <link rel="canonical" href="https://pyblog.vercel.app/" /> // изменить нужно
+                <link rel="manifest" href="/manifest.json" />
+
                 <title>Detail - {detail[0] ? detail[0].name : ""}</title>
             </Head>
 

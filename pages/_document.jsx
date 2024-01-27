@@ -11,8 +11,6 @@ class MyDocument extends Document {
                         crossorigin="anonymous"
                     />
 
-                    <link rel="manifest" href="../manifest.json" />
-
                 </Head>
                 <body>
                     <Main />

@@ -26,13 +26,14 @@ const ContactPage = () => {
                 <meta property="og:site_name" content="pyblog.uz" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
-                <link rel="canonical" href="https://pyblog.uz/" />
+                <link rel="canonical" href="https://pyblog.vercel.app/" /> // изменить нужно
+                <link rel="manifest" href="/manifest.json" />
 
                 <title>Bog'lanish - pyblog.uz</title>
             </Head>
 
             <main>
-                <Contact /> 
+                <Contact />
             </main>
         </>
     )
