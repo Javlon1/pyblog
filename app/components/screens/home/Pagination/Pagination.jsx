@@ -252,26 +252,24 @@ export default function Pagination() {
                     )
                 }
             </div>
-            <ul role="navigation" aria-label="Pagination">
-                <ReactPaginate
-                    previousLabel="<<"
-                    nextLabel=">>"
-                    breakLabel="..."
-                    pageCount={Math.ceil(totalProjects / countriesPerPage)}
-                    marginPagesDisplayed={2}
-                    onPageChange={handlePageClick}
-                    containerClassName={styles.pagination}
-                    pageClassName={styles.pagination__el}
-                    pageLinkClassName={styles.pagination__el}
-                    previousClassName={styles.pagination__el}
-                    previousLinkClassName={styles.pagination__el}
-                    nextClassName={styles.pagination__el}
-                    nextLinkClassName={styles.pagination__el}
-                    breakClassName={styles.pagination__el}
-                    breakLinkClassName={styles.pagination__el}
-                    activeLinkClassName={styles.act}
-                />
-            </ul>
+            <ReactPaginate
+                previousLabel="<<"
+                nextLabel=">>"
+                breakLabel="..."
+                pageCount={Math.ceil(totalProjects / countriesPerPage)}
+                marginPagesDisplayed={2}
+                onPageChange={handlePageClick}
+                containerClassName={styles.pagination}
+                pageClassName={styles.pagination__el}
+                pageLinkClassName={styles.pagination__el}
+                previousClassName={styles.pagination__el}
+                previousLinkClassName={styles.pagination__el}
+                nextClassName={styles.pagination__el}
+                nextLinkClassName={styles.pagination__el}
+                breakClassName={styles.pagination__el}
+                breakLinkClassName={styles.pagination__el}
+                activeLinkClassName={styles.act}
+            />
         </div>
     );
 }
