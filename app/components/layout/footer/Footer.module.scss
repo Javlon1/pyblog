@@ -2,7 +2,7 @@
 
 .footer {
     padding: 20px 0;
-    background-color: $silver;
+    background-color: $white;
 
     &__top {
         display: flex;
@@ -85,7 +85,7 @@
                     }
 
                     &:nth-child(1) {
-                        color: #0073ff;
+                        color: #0088cc;
                     }
 
                     &:nth-child(2) {
@@ -113,7 +113,7 @@
             font-weight: 600;
 
             a {
-                color: #0165E1;
+                color: $blue;
                 font-size: 18px;
                 font-weight: 600;
             }
