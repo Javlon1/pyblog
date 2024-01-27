@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Pagination.module.scss';
-import { Context } from '@/app/components/ui/Context/Context';
 
 import thumbs_up from "../../../../../public/emojies/thumbs_up.png"
 import heart from "../../../../../public/emojies/heart.png"
@@ -14,7 +13,6 @@ import neutral_face from "../../../../../public/emojies/neutral_face.png"
 import thumbs_down from "../../../../../public/emojies/thumbs_down.png"
 
 export default function Pagination() {
-    const { detail, setDetail } = useContext(Context)
 
     // Pagination
     const [projects, setProjects] = useState([]);
@@ -252,6 +250,7 @@ export default function Pagination() {
                     )
                 }
             </div>
+
             <ReactPaginate
                 previousLabel="<<"
                 nextLabel=">>"
@@ -270,6 +269,7 @@ export default function Pagination() {
                 breakLinkClassName={styles.pagination__el}
                 activeLinkClassName={styles.act}
             />
+
         </div>
     );
 }
