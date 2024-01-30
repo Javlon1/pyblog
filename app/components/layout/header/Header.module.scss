@@ -110,3 +110,27 @@
         background-position: 0px;
     }
 }
+
+.darkMode {
+    background-color: $light-black;
+
+    .header__nav__searchBox {
+        background-color: $black;
+
+        &__searchInput {
+            input {
+                background-color: $black;
+                color: $white;
+
+                &::placeholder {
+                    color: $white;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &__search {
+            color: $white;
+        }
+    }
+}

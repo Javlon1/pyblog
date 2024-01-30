@@ -378,6 +378,122 @@
     }
 }
 
+.darkMode {
+    background-color: $black;
+
+    .detailPage__item {
+        background-color: $light-black;
+
+        &__title {
+            i {
+                color: $blue;
+            }
+
+            h2 {
+                color: $white;
+            }
+        }
+
+        &__list {
+            li {
+                p {
+                    color: $white;
+                }
+            }
+        }
+
+        &__bottom {
+            &__list {
+                &__item {
+                    span {
+                        color: $green;
+                    }
+
+                    .reactionName {
+                        color: $white;
+                        background-color: $light-black;
+                        border: 1px solid $white;
+
+                        &::before {
+                            border-bottom: 7px solid $white;
+                        }
+                    }
+                }
+            }
+
+            h2 {
+                color: $white;
+            }
+
+            &__list1 {
+                li {
+                    a {
+                        border: 1px solid $white;
+                    }
+
+                    p {
+                        color: $white;
+                    }
+
+                    &:hover {
+                        p {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            &__links {
+                div {
+                    a {
+                        color: $white;
+
+                        &:hover {
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .detailPage__items__left {
+        background-color: $light-black;
+        h3{
+            color: $white;
+        }
+        .list{
+            a{
+                li{
+                    span{
+                        p{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .detailPage__items__right {
+        background-color: $light-black;
+        h3{
+            color: $white;
+        }
+        .list{
+            a{
+                li{
+                    span{
+                        p{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .detailPage {
         &__items {

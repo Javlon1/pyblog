@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './Pagination.module.scss';
 
 import thumbs_up from "../../../../../public/emojies/thumbs_up.png"
@@ -12,11 +12,19 @@ import alien from "../../../../../public/emojies/alien.png"
 import neutral_face from "../../../../../public/emojies/neutral_face.png"
 import thumbs_down from "../../../../../public/emojies/thumbs_down.png"
 import { Context } from '@/app/components/ui/Context/Context';
-import { useRouter } from 'next/router';
 
 export default function Pagination() {
-    const { setDetail } = useContext(Context);
     const router = useRouter()
+
+    const { dark } = useContext(Context);
+
+    const [componentDark, setComponentDark] = useState()
+
+    useEffect(() => {
+        const item = `${styles.item} ${dark ? styles.darkMode : ""}`
+        setComponentDark(item)
+    }, [dark])
+
     // Pagination
     const [projects, setProjects] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -73,7 +81,7 @@ export default function Pagination() {
     };
 
     return (
-        <div id="projects" className={styles.item}>
+        <div id="projects" className={componentDark}>
 
             <span className={`${styles.alert} ${showModal ? styles.alertAct : ""}`}>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>

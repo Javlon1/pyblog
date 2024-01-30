@@ -125,6 +125,7 @@
             img {
                 width: 100%;
                 height: auto;
+                border-radius: $radius;
             }
 
             p {
@@ -146,5 +147,61 @@
                 }
             }
         }
+    }
+}
+
+.darkMode {
+    .bar__list__item {
+        background-color: $light-black;
+
+        &__title {
+            color: $white;
+        }
+    }
+
+    .list {
+        li {
+            b {
+                color: $blue;
+            }
+
+            p {
+                color: $blue;
+            }
+        }
+    }
+
+    p {
+        color: $white;
+    }
+
+    .bar__list__column {
+        background-color: $light-black;
+
+        &__title {
+            h2 {
+                color: $white;
+            }
+
+            p {
+                color: $blue;
+            }
+        }
+
+        &__list {
+            li {
+                a {
+                    border: 1px solid $white;
+
+                    p {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .bar__list__qrcode {
+        background-color: $light-black;
     }
 }

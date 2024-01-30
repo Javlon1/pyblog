@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import MyContainer from '../../ui/MyContainer/MyContainer'
 import styles from './Footer.module.scss'
 import { Context } from '../../ui/Context/Context'
@@ -9,14 +9,19 @@ import { Context } from '../../ui/Context/Context'
 const Footer = () => {
     const { dark, setDark } = useContext(Context);
 
+    const [componentDark, setComponentDark] = useState()
+
     const handlerDarkMode = () => {
         setDark(!dark);
     };
 
-    console.log(dark);
+    useEffect(() => {
+        const footer = `${styles.footer} ${dark ? styles.darkMode : ""}`
+        setComponentDark(footer)
+    }, [dark])
 
     return (
-        <footer className={styles.footer}>
+        <footer className={componentDark}>
             <MyContainer>
                 <ul className={styles.footer__top}>
                     <li className={styles.footer__top__item}>
@@ -39,7 +44,7 @@ const Footer = () => {
                     <li className={styles.footer__top__item}>
                         <Link href={'/'}>Bosh sahifa</Link>
                         <Link href={'/contact'}>Bog’lanish</Link>
-                        
+
                         <button type='button' onClick={handlerDarkMode} aria-label="Toggle Dark Mode">
                             <i className="fa-solid fa-moon"></i>
                         </button>

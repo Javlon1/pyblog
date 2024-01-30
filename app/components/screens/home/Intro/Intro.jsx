@@ -1,16 +1,18 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Link from 'next/link'
 import styles from './Intro.module.scss'
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
 import Bar from '@/app/components/layout/bar/Bar';
 import Pagination from '../Pagination/Pagination';
+import { Context } from '@/app/components/ui/Context/Context';
 
 
 const Intro = () => {
+    const { dark } = useContext(Context);
     const [opened, setOpened] = useState(false)
     const [tagAct, setTagAct] = useState(false)
 
-    // const emojies = ["fa-solid fa-thumbs-up", "fa-solid fa-thumbs-down", "fa-solid fa-bolt", "fa-solid fa-fire", "fa-solid fa-star"];
+    const [componentDark, setComponentDark] = useState()
     const [index, setIndex] = useState(0);
     const emojiRef = useRef(null);
     const emojiReF = useRef(null);
@@ -59,9 +61,13 @@ const Intro = () => {
 
     }, [opened]);
 
+    useEffect(() => {
+        const intro = `${styles.intro} ${dark ? styles.darkMode : ""}`
+        setComponentDark(intro)
+    }, [dark])
 
     return (
-        <section className={styles.intro}>
+        <section className={componentDark}>
             <MyContainer>
                 <div className={styles.intro__items}>
                     <div className={styles.intro__items__bar}>

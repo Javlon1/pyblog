@@ -2,13 +2,22 @@ import Image from 'next/image';
 import styles from './Header.module.scss';
 import MyContainer from '../../ui/MyContainer/MyContainer';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { Context } from '../../ui/Context/Context';
 
 const Header = () => {
     const [inp, setInp] = useState(false)
+    const { dark } = useContext(Context);
+
+    const [componentDark, setComponentDark] = useState()
+
+    useEffect(() => {
+        const header = `${styles.header} ${dark ? styles.darkMode : ""}`
+        setComponentDark(header)
+    }, [dark])
 
     return (
-        <header id="header" className={styles.header}>
+        <header id="header" className={componentDark}>
             <MyContainer>
                 <nav className={styles.header__nav}>
                     <Link

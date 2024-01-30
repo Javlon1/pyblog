@@ -12,6 +12,7 @@
         h1 {
             font-size: 1px;
             color: $white;
+            opacity: 0;
         }
 
         &__bar {
@@ -407,6 +408,101 @@
 
     &:after {
         transform: rotate(-45deg) translate(35px, 35px) !important;
+    }
+}
+
+.darkMode {
+    background-color: $black;
+
+    .intro__items__item__nav {
+        background-color: $light-black;
+    }
+
+    .list__item {
+        background-color: $light-black;
+        border: 1px solid $white;
+
+        &__btn {
+            color: $white;
+        }
+
+        &:hover {
+            background-color: $black !important;
+            border: 1px solid $white !important;
+
+            .list__item__btn {
+                color: $white !important;
+            }
+        }
+    }
+
+    .active {
+        background-color: $black !important;
+        border: 1px solid $white !important;
+
+        .list__item__btn {
+            color: $white !important;
+        }
+    }
+
+    .intro__items__item__rightBar {
+        background-color: $light-black;
+
+        .sideBar {
+            &__title {
+                h2 {
+                    color: $white;
+                }
+
+                b {
+                    color: $white;
+                }
+            }
+
+            &__list {
+                li {
+                    a {
+                        border: 1px solid $white;
+
+                        p {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tag,
+    .tags {
+        ul {
+            li {
+                a {
+                    background-color: $light-black;
+
+                    p {
+                        color: $white;
+                    }
+
+                    &:hover {
+                        p {
+                            color: $white;
+                        }
+
+                        border: 1px solid $white;
+                    }
+                }
+            }
+
+            button {
+                color: $white;
+                background-color: $light-black;
+            }
+        }
+    }
+
+    .pagination {
+        background-color: $black;
     }
 }
 

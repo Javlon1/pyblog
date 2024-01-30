@@ -4,8 +4,6 @@ const Context = createContext()
 function Provider({ children }) {
     const [url] = useState("http://localhost:3000/api")
 
-    const [detail, setDetail] = useState([])
-
     const [dark, setDark] = useState(() => {
         const darkMode = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('dark')) : null;
         return Boolean(darkMode)
@@ -18,7 +16,7 @@ function Provider({ children }) {
     }, [dark]);
 
     return (
-        <Context.Provider value={{ dark, setDark, url, detail, setDetail }}>
+        <Context.Provider value={{ dark, setDark, url }}>
             {children}
         </Context.Provider>
     )

@@ -68,10 +68,10 @@
 
                 div {
                     color: $black;
-                    transition: $transition;
                     cursor: pointer;
 
                     h2 {
+                        transition: $transition;
                         @include title;
                     }
 
@@ -317,6 +317,94 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.darkMode {
+    background-color: $black;
+
+    .portfolio__items {
+        background-color: $light-black;
+
+        &__top__left {
+            ul {
+                li {
+                    i {
+                        color: $blue;
+                    }
+
+                    p {
+                        color: $white;
+                    }
+                }
+            }
+
+            div {
+                h2 {
+                    color: $green;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+            }
+
+            p {
+                color: $white;
+            }
+        }
+
+        &__bottom {
+            .tooltip {
+                i {
+                    color: $blue;
+                }
+
+                span {
+                    color: $white;
+                }
+
+                &__reaction {
+                    background-color: $light-black;
+                    color: $white !important;
+                    border: 1px solid $white;
+
+                    &::before {
+                        background-color: $light-black;
+                        border-top: 1px solid $white;
+                        border-left: 1px solid $white;
+                    }
+                }
+            }
+
+            &__list {
+                li {
+                    span {
+                        color: $green;
+                    }
+
+                    .reactionName {
+                        color: $white;
+                        background-color: $light-black;
+                        border: 1px solid $white;
+
+                        &::before {
+                            border-bottom: 7px solid $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pagination__el{
+        background-color: $light-black;
+        color: $white;
+        
+        &:hover {
+            background-color: $blue;
+            color: $white;
         }
     }
 }

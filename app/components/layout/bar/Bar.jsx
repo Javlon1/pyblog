@@ -2,11 +2,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Bar.module.scss'
 import qrcode from "../../../../public/qrcode.png"
+import { useContext, useEffect, useState } from 'react'
+import { Context } from '../../ui/Context/Context'
 
 const Bar = () => {
+    const { dark } = useContext(Context);
+
+    const [componentDark, setComponentDark] = useState()
+
+    useEffect(() => {
+        const bar = `${styles.bar} ${dark ? styles.darkMode : ""}`
+        setComponentDark(bar)
+    }, [dark])
 
     return (
-        <section className={styles.bar}>
+        <section className={componentDark}>
             <div className={styles.bar__list}>
 
                 <div className={styles.bar__list__item}>
@@ -26,15 +36,15 @@ const Bar = () => {
                     </Link>
                     <ul className={styles.list}>
                         <li>
-                            <b><i className="bi bi-heart-fill"></i></b>
+                            <b><i className="fa-solid fa-heart"></i></b>
                             <p>+43</p>
                         </li>
                         <li>
-                            <b><i className="bi bi-telegram"></i></b>
+                            <b><i className="fa-brands fa-telegram"></i></b>
                             <p>+11</p>
                         </li>
                         <li>
-                            <b><i className="bi bi-chat-left-fill"></i></b>
+                            <b><i className="fa-solid fa-message"></i></b>
                             <p>+5</p>
                         </li>
                     </ul>
@@ -44,7 +54,7 @@ const Bar = () => {
                 <div className={styles.bar__list__column}>
                     <div className={styles.bar__list__column__title}>
                         <h2>Ruknlar</h2>
-                        <p><i className="bi bi-stack"></i></p>
+                        <p><i className="fa-solid fa-layer-group"></i></p>
                     </div>
                     <ul className={styles.bar__list__column__list}>
                         <li>
