@@ -11,6 +11,8 @@ const Detail = () => {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
+                <meta name="description" content={metaDetail.name} /> // Описание страницы
+                <meta name="keywords" content={metaDetail.name} /> // ключевые слова, страницы
                 <meta name="image_src" content="https://pyblog.uz/pybloguz/static/assets/images/HEAD.svg" /> // URL для img
                 <meta name="theme-color" content="#D3EFEA" />
 
