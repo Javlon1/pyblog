@@ -46,7 +46,13 @@ const Footer = () => {
                         <Link href={'/contact'}>Bog’lanish</Link>
 
                         <button type='button' onClick={handlerDarkMode} aria-label="Toggle Dark Mode">
-                            <i className="fa-solid fa-moon"></i>
+                            {
+                                dark ? (
+                                    <i className="fa-solid fa-sun"></i>
+                                ) : (
+                                    <i className="fa-solid fa-moon"></i>
+                                )
+                            }
                         </button>
 
 
