@@ -1,11 +1,22 @@
 import Link from 'next/link'
 import styles from './Contact.module.scss'
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
+import { useContext, useEffect, useState } from 'react';
+import { Context } from '../../ui/Context/Context';
 
 const Contact = () => {
 
+    const { dark } = useContext(Context);
+
+    const [componentDark, setComponentDark] = useState()
+
+    useEffect(() => {
+        const contact = `${styles.contact} ${dark ? styles.darkMode : ""}`
+        setComponentDark(contact)
+    }, [dark])
+
     return (
-        <section className={styles.contact}>
+        <section className={componentDark}>
             <MyContainer>
                 <div className={styles.contact__item}>
                     <h1>Bog'lanish - pyblog.uz</h1>

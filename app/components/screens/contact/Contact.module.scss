@@ -101,6 +101,36 @@
     }
 }
 
+.darkMode {
+    background-color: $black;
+
+    .contact__item {
+        background-color: $light-black;
+
+        h1 {
+            color: $light-black;
+        }
+
+        h2 {
+            color: $white;
+        }
+
+        h3 {
+            color: $white;
+        }
+
+        p {
+            color: $white;
+        }
+        &__list{
+            li{
+                &:hover{
+                    background-color: $black;
+                }
+            }
+        }
+    }
+}
 
 @media only screen and (max-width: 600px) {
     .contact {
