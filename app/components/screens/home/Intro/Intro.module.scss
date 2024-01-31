@@ -292,7 +292,7 @@
                         }
                     }
 
-                    button {
+                    .btn {
                         width: 35px;
                         height: 35px;
                         display: flex;
@@ -377,6 +377,14 @@
 }
 
 .tagAct {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius;
+    border: none;
+    transition: $transition;
     transform: rotate(-180deg);
     background-color: $blue !important;
     color: $white !important;
