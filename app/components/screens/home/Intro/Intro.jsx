@@ -232,7 +232,7 @@ const Intro = () => {
                                 </li>
                                 <button
                                     type='button'
-                                    className={tagAct ? styles.tagAct : styles.btn}
+                                    className={`${styles.btn} ${tagAct ? styles.tagAct : ""}`}
                                     onClick={() => {
                                         setTagAct(!tagAct)
                                     }}
