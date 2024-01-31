@@ -304,6 +304,12 @@
                         background-color: $white;
                         transition: $transition;
                         cursor: pointer;
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
                     }
                 }
             }
