@@ -323,8 +323,7 @@
                     transition: $transition;
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 20px;
-                    // background-color: $white;
+                    gap: 5px;
 
                     li {
                         transition: $transition;
@@ -400,7 +399,7 @@
     margin-top: 20px;
 
     ul {
-        height: 100px !important;
+        height: 90px !important;
     }
 }
 

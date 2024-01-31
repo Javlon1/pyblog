@@ -5,6 +5,7 @@ import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
 import Bar from '@/app/components/layout/bar/Bar';
 import Pagination from '../Pagination/Pagination';
 import { Context } from '@/app/components/ui/Context/Context';
+import Video from '../Video/Video';
 
 
 const Intro = () => {
@@ -231,7 +232,7 @@ const Intro = () => {
                                     </Link>
                                 </li>
                                 <button
-                                    aria-label="Отметить"
+                                    aria-label="button"
                                     type='button'
                                     className={`${styles.btn} ${tagAct ? styles.tagAct : ""}`}
                                     onClick={() => {
@@ -325,6 +326,7 @@ const Intro = () => {
                             </ul>
                         </div>
                         <div className={styles.pagination}>
+                            <Video />
                             <Pagination />
                         </div>
                     </div>
