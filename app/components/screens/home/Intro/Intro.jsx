@@ -231,6 +231,7 @@ const Intro = () => {
                                     </Link>
                                 </li>
                                 <button
+                                    type='button'
                                     className={tagAct ? styles.tagAct : ""}
                                     onClick={() => {
                                         setTagAct(!tagAct)
