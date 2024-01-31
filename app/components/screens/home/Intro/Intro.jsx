@@ -231,6 +231,7 @@ const Intro = () => {
                                     </Link>
                                 </li>
                                 <button
+                                    aria-labelledby="button-label"
                                     type='button'
                                     className={`${styles.btn} ${tagAct ? styles.tagAct : ""}`}
                                     onClick={() => {
