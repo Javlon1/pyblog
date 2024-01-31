@@ -231,14 +231,14 @@ const Intro = () => {
                                     </Link>
                                 </li>
                                 <button
-                                    aria-labelledby="button-label"
+                                    aria-label="Отметить"
                                     type='button'
                                     className={`${styles.btn} ${tagAct ? styles.tagAct : ""}`}
                                     onClick={() => {
                                         setTagAct(!tagAct)
                                     }}
                                 >
-                                    <span id="button-label">
+                                    <span>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24"
