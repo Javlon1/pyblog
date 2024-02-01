@@ -150,15 +150,7 @@ export default function Pagination() {
                                             <h2>{item.title}</h2>
                                         </div>
                                         <p>
-                                            <div dangerouslySetInnerHTML={{
-                                                __html: item.body.ops?.map((e) => {
-                                                    if (e.insert) {
-                                                        return e.insert;
-                                                    } else {
-                                                        return null;
-                                                    }
-                                                }).join('')
-                                            }} />
+                                            {}
                                         </p>
                                     </div>
                                     <div className={styles.portfolio__items__top__right}>
@@ -310,8 +302,8 @@ export default function Pagination() {
                 }
             </div>
 
-            <ul className={styles.pagination}>
-                <button className={styles.pagination__el} onClick={handlePrevClick}>&lt;&lt;</button>
+            <ol className={styles.pagination}>
+                <button type='button' className={styles.pagination__el} onClick={handlePrevClick}>&lt;&lt;</button>
 
                 {pageNumbers.map((pageNumber) => (
                     <li
@@ -323,8 +315,8 @@ export default function Pagination() {
                     </li>
                 ))}
 
-                <button className={styles.pagination__el} onClick={handleNextClick}>&gt;&gt;</button>
-            </ul>
+                <button type='button' className={styles.pagination__el} onClick={handleNextClick}>&gt;&gt;</button>
+            </ol>
         </div>
     );
 }
