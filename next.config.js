@@ -15,6 +15,6 @@ module.exports = {
 
   // Настройки для компонента next/image
   images: {
-    domains: ['pyblog.uz'], // Домен сайта
+    domains: ['54a8900a61b443e94f247d6785244b40.serveo.net', 'pyblog.uz'], // Домен сайта
   },
 };

@@ -15,8 +15,10 @@ import { Context } from '@/app/components/ui/Context/Context';
 
 export default function Pagination() {
     const router = useRouter()
+    const [pagination, setPagination] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const { dark } = useContext(Context);
+    const { dark, urlApi } = useContext(Context);
 
     const [componentDark, setComponentDark] = useState()
 
@@ -24,42 +26,6 @@ export default function Pagination() {
         const item = `${styles.item} ${dark ? styles.darkMode : ""}`
         setComponentDark(item)
     }, [dark])
-
-    // Pagination
-    const [projects, setProjects] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [countriesPerPage] = useState(10);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        const getProjects = async () => {
-            try {
-                const response = await fetch('https://63c2c490b0c286fbe5f347e9.mockapi.io/users');
-                if (!response.ok) {
-                    throw new Error(`Ошибка: ${response.status}`);
-                }
-                const data = await response.json();
-                setProjects(data);
-                setLoading(true);
-            } catch (error) {
-                console.error(error.message);
-            }
-        };
-
-        getProjects();
-    }, []);
-
-    const lastProjectIndex = currentPage * countriesPerPage;
-    const firstProjectIndex = lastProjectIndex - countriesPerPage;
-    const currentProjects = projects.slice(firstProjectIndex, lastProjectIndex);
-
-    const handlePageClick = (item) => {
-        const newPage = item.selected + 1;
-        setCurrentPage(newPage);
-    };
-
-    const totalProjects = projects.length;
-    // Pagination
 
     const [showModal, setShowModal] = useState(false);
 
@@ -80,6 +46,74 @@ export default function Pagination() {
         setShowModal(true)
     };
 
+    const [total_pages, setTotal_pages] = useState();
+    const [currentPage, setCurrentPage] = useState(() => {
+        const currentPage = typeof window !== 'undefined' ? window.localStorage.getItem('currentPage') : null;
+        return currentPage ? currentPage : 1;
+    });
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.localStorage.setItem('currentPage', currentPage);
+        }
+    }, [currentPage, total_pages]);
+
+    const pageNumbers = Array.from({ length: total_pages }, (_, index) => index + 1);
+
+    const handleClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const handlePrevClick = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handleNextClick = () => {
+        if (currentPage < total_pages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const endpointPagination = 'home';
+    const fullUrlPagination = `${urlApi}/${endpointPagination}/?page=${currentPage}`;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(fullUrlPagination, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // 'Authorization': `Bearer ${jwt_token}`,
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Ошибка: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (data) {
+                    setPagination(data);
+                    setCurrentPage(data.results.current_page)
+                    setTotal_pages(data.results.total_pages)
+                    setLoading(true);
+                } else {
+                    console.error('Ошибка: Некорректные данные получены от сервера.');
+                }
+
+            } catch (error) {
+                console.error('Ошибка при запросе данных:', error.message);
+            }
+        };
+
+        fetchData();
+    }, [fullUrlPagination]);
+
+
     return (
         <div id="projects" className={componentDark}>
 
@@ -91,18 +125,18 @@ export default function Pagination() {
             <div className={styles.portfolio}>
                 {
                     loading ? (
-                        currentProjects?.map((item) => (
+                        pagination.results.posts?.map((item) => (
                             <div key={item.id} className={styles.portfolio__items}>
                                 <div className={styles.portfolio__items__top}>
                                     <div className={styles.portfolio__items__top__left}>
                                         <ul>
                                             <li>
-                                                <i className="fa-brands fa-python"></i>
-                                                <p>Python</p>
+                                                <i className={item.category.icon}></i>
+                                                <p>{item.category.title}</p>
                                             </li>
                                             <li>
                                                 <i className="fa-solid fa-eye"></i>
-                                                <p>92 marta</p>
+                                                <p>{item.views} marta</p>
                                             </li>
                                         </ul>
                                         <div
@@ -113,9 +147,19 @@ export default function Pagination() {
                                                 })
                                             }}
                                         >
-                                            <h2>Pythonni o'rganish uchun 2024-yilda nima qilishim kerak ?</h2>
+                                            <h2>{item.title}</h2>
                                         </div>
-                                        <p>Python dasturlash tilini o'rganish uchun bir nechta usullar mavjud, va har bir kishining o'rganish usuli har-hil bo'lishi mumkin. Quyidagi qadamlar si...</p>
+                                        <p>
+                                            <div dangerouslySetInnerHTML={{
+                                                __html: item.body.ops?.map((e) => {
+                                                    if (e.insert) {
+                                                        return e.insert;
+                                                    } else {
+                                                        return null;
+                                                    }
+                                                }).join('')
+                                            }} />
+                                        </p>
                                     </div>
                                     <div className={styles.portfolio__items__top__right}>
                                         <div
@@ -133,7 +177,7 @@ export default function Pagination() {
                                                 height={133}
                                                 priority
                                                 alt='img'
-                                                src={"https://pyblog.uz/pybloguz/mediafiles/posts/2024/01/all_linux_commands-min.png"}
+                                                src={item.image}
                                             />
                                         </div>
                                     </div>
@@ -159,7 +203,7 @@ export default function Pagination() {
                                                 alt='👍'
                                                 src={thumbs_up}
                                             />
-                                            <span>+1</span>
+                                            <span>+{item.good}</span>
                                             <div className={styles.reactionName}>Yaxshi</div>
                                         </li>
                                         <li
@@ -174,7 +218,7 @@ export default function Pagination() {
                                                 alt='❤'
                                                 src={heart}
                                             />
-                                            <span>+2</span>
+                                            <span>+{item.like}</span>
                                             <div className={styles.reactionName}>Yoqdi</div>
                                         </li>
                                         <li
@@ -189,7 +233,7 @@ export default function Pagination() {
                                                 alt='😎'
                                                 src={sunglass_face}
                                             />
-                                            <span>+3</span>
+                                            <span>+{item.great}</span>
                                             <div className={styles.reactionName}>Zo`r</div>
                                         </li>
                                         <li
@@ -204,7 +248,7 @@ export default function Pagination() {
                                                 alt='💥'
                                                 src={fire}
                                             />
-                                            <span>+4</span>
+                                            <span>+{item.excellent}</span>
                                             <div className={styles.reactionName}>Yonmoqda</div>
                                         </li>
                                         <li
@@ -219,7 +263,7 @@ export default function Pagination() {
                                                 alt='👽'
                                                 src={alien}
                                             />
-                                            <span>+5</span>
+                                            <span>+{item.legend}</span>
                                             <div className={styles.reactionName}>Bu dunyoniki emas!</div>
                                         </li>
                                         <li
@@ -234,7 +278,7 @@ export default function Pagination() {
                                                 alt='😐'
                                                 src={neutral_face}
                                             />
-                                            <span>+6</span>
+                                            <span>+{item.neutral}</span>
                                             <div className={styles.reactionName}>Betaraf</div>
                                         </li>
                                         <li
@@ -249,7 +293,7 @@ export default function Pagination() {
                                                 alt='👎'
                                                 src={thumbs_down}
                                             />
-                                            <span>+7</span>
+                                            <span>+{item.dislike}</span>
                                             <div className={styles.reactionName}>Yoqmadi</div>
                                         </li>
                                     </ul>
@@ -266,25 +310,21 @@ export default function Pagination() {
                 }
             </div>
 
-            <ReactPaginate
-                previousLabel="<<"
-                nextLabel=">>"
-                breakLabel="..."
-                pageCount={Math.ceil(totalProjects / countriesPerPage)}
-                marginPagesDisplayed={2}
-                onPageChange={handlePageClick}
-                containerClassName={styles.pagination}
-                pageClassName={styles.pagination__el}
-                pageLinkClassName={styles.pagination__el}
-                previousClassName={styles.pagination__el}
-                previousLinkClassName={styles.pagination__el}
-                nextClassName={styles.pagination__el}
-                nextLinkClassName={styles.pagination__el}
-                breakClassName={styles.pagination__el}
-                breakLinkClassName={styles.pagination__el}
-                activeLinkClassName={styles.act}
-            />
+            <ul className={styles.pagination}>
+                <button className={styles.pagination__el} onClick={handlePrevClick}>&lt;&lt;</button>
 
+                {pageNumbers.map((pageNumber) => (
+                    <li
+                        className={`${styles.pagination__el} ${pageNumber === currentPage ? styles.act : ''}`}
+                        onClick={() => handleClick(pageNumber)}
+                        key={pageNumber}
+                    >
+                        {pageNumber}
+                    </li>
+                ))}
+
+                <button className={styles.pagination__el} onClick={handleNextClick}>&gt;&gt;</button>
+            </ul>
         </div>
     );
 }

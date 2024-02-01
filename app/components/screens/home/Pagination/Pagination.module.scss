@@ -225,6 +225,10 @@
     flex-wrap: wrap;
     margin: 2rem 0;
 
+    button{
+        border: none;
+    }
+
     &__el {
         min-width: 35px;
         height: 35px;
@@ -398,10 +402,11 @@
             }
         }
     }
-    .pagination__el{
+
+    .pagination__el {
         background-color: $light-black;
         color: $white;
-        
+
         &:hover {
             background-color: $blue;
             color: $white;

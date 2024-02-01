@@ -1,7 +1,7 @@
 // const endpointGet = 'limit';
 // const fullUrl = `${urlApi}/${endpointGet}/`;
 
-// React.useEffect(() => {
+// useEffect(() => {
 //     const fetchData = async () => {
 //         try {
 //             const response = await fetch(fullUrl, {
@@ -19,7 +19,7 @@
 //             const data = await response.json();
 
 //             if (data) {
-//                 setTotalPrice(data.limit);
+//                 setData(data);
 //             } else {
 //                 console.error('Ошибка: Некорректные данные получены от сервера.');
 //             }
