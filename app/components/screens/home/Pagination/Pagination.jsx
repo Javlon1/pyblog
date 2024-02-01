@@ -302,8 +302,8 @@ export default function Pagination() {
                 }
             </div>
 
-            <ol className={styles.pagination}>
-                <button type='button' className={styles.pagination__el} onClick={handlePrevClick}>&lt;&lt;</button>
+            <ul className={styles.pagination}>
+                <li className={styles.pagination__el} onClick={handlePrevClick}>&lt;&lt;</li>
 
                 {pageNumbers.map((pageNumber) => (
                     <li
@@ -315,8 +315,8 @@ export default function Pagination() {
                     </li>
                 ))}
 
-                <button type='button' className={styles.pagination__el} onClick={handleNextClick}>&gt;&gt;</button>
-            </ol>
+                <li className={styles.pagination__el} onClick={handleNextClick}>&gt;&gt;</li>
+            </ul>
         </div>
     );
 }
